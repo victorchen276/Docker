@@ -3,6 +3,9 @@
 ```
 docker rm -v $(docker ps -a -q -f status=exited)
 ```
+```
+docker rm -v $(docker ps -a -q -f status=created)
+```
 
 2: Running an interactive shell
 ```

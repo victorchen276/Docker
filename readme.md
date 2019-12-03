@@ -16,3 +16,12 @@ GET /v2/_catalog
 
 List image tags
 GET /v2/<name>/tags/list
+
+
+
+remove all images
+docker rmi $(docker images -a -q)
+
+Remove dangling images
+docker images -f dangling=true
+docker images purge

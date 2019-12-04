@@ -1,0 +1,75 @@
+
+You can also perform this action in beforehand using 'kubeadm config images pull'
+
+kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.99.2
+
+
+
+    To start using your cluster, you need to run the following as a regular user:
+
+    mkdir -p $HOME/.kube
+    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+  You should now deploy a pod network to the cluster.
+  Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+    https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+  Then you can join any number of worker nodes by running the following on each as root:
+
+
+
+
+Kubemaster: 192.168.99.2
+Node1: 192.168.99.3
+Node2: 192.168.99.4
+
+User: yche276
+
+
+Cmd:
+kubectl create -f pod-definition.yml 
+
+kubectl get pods
+
+kubectl delete pod myapp-pod --now
+
+kubectl delete deployment nginx
+
+ kubectl run nginx --image=nginx:1.10.0
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/nginx created
+
+
+kubectl expose deployments nginx --port 80 --type LoadBalancer
+kubectl get services
+
+
+Netstat -tulpn
+
+
+
+se the kubectl exec command to run an interactive shell inside the Pod
+kubectl exec monolith --stdin --tty -c phoneme /bin/sh
+
+
+Remove minikube 
+Linux
+minikube stop; minikube delete
+docker stop (docker ps -aq)
+rm -r ~/.kube ~/.minikube
+sudo rm /usr/local/bin/localkube /usr/local/bin/minikube
+systemctl stop '*kubelet*.mount'
+sudo rm -rf /etc/kubernetes/
+docker system prune -af --volumes
+
+Mac OS
+minikube stop; minikube delete &&
+docker stop $(docker ps -aq) &&
+rm -rf ~/.kube ~/.minikube &&
+sudo rm -rf /usr/local/bin/localkube /usr/local/bin/minikube &&
+launchctl stop '*kubelet*.mount' &&
+launchctl stop localkube.service &&
+launchctl disable localkube.service &&
+sudo rm -rf /etc/kubernetes/ &&
+docker system prune -af --volumes

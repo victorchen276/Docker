@@ -1,0 +1,5 @@
+
+kube_master
+
+  account: kubemaster
+  password: abc123

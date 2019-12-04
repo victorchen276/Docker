@@ -1,4 +1,4 @@
-test
+Test again
 lunch an ec2 instance, ubuntu 18
 
 install aws cli

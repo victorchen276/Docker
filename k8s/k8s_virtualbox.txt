@@ -1,0 +1,7 @@
+vm:
+account: kubeadmin
+password: 123
+
+master: 192.168.99.100
+node1: 192.168.99.101
+node2: 192.168.99.102

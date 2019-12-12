@@ -73,3 +73,15 @@ launchctl stop localkube.service &&
 launchctl disable localkube.service &&
 sudo rm -rf /etc/kubernetes/ &&
 docker system prune -af --volumes
+
+
+sudo apt install ifupdown
+
+auto lo
+iface lo inet loopback
+
+#Configure enp0s8 interface
+auto enp0s8
+iface enp0s8 inet static
+      address 192.168.99.2
+      netmask 255.255.255.0

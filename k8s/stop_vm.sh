@@ -1,5 +1,5 @@
 #!/bin/bash
 
-vboxmanage controlvm "kube master" poweroff soft
-vboxmanage controlvm "kube node1" poweroff soft
-vboxmanage controlvm "kube node2" poweroff soft
+vboxmanage controlvm "kube master 1" poweroff soft
+vboxmanage controlvm "kube node 1" poweroff soft
+vboxmanage controlvm "kube node 2" poweroff soft

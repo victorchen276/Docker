@@ -1,4 +1,5 @@
 
+
 You can also perform this action in beforehand using 'kubeadm config images pull'
 
 kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.99.2
@@ -20,15 +21,10 @@ kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.
 
 
 
-Kubemaster: 192.168.99.2
-Node1: 192.168.99.3
-Node2: 192.168.99.4
-
-User: yche276
 
 
 Cmd:
-kubectl create -f pod-definition.yml 
+kubectl create -f pod-definition.yml
 
 kubectl get pods
 
@@ -53,7 +49,7 @@ se the kubectl exec command to run an interactive shell inside the Pod
 kubectl exec monolith --stdin --tty -c phoneme /bin/sh
 
 
-Remove minikube 
+Remove minikube
 Linux
 minikube stop; minikube delete
 docker stop (docker ps -aq)
